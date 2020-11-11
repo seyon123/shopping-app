@@ -1,0 +1,24 @@
+.footer {
+    height: 100px;
+    width: 100%;
+    background: var(--grey);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 6;
+}
+
+.footer p {
+    line-height: 24px;
+    font-size: 16px;
+    padding: 0;
+    color: var(--head-light);
+    text-align: center;
+}
+
+.footer a {
+    color: var(--purple);
+    text-decoration: none;
+}

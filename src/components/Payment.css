@@ -1,0 +1,39 @@
+.payment {
+	background: var(--grey);
+}
+.paymentContainer {
+    padding: 20px 0;
+}
+.paymentContainer > h1 {
+	text-align: center;
+	padding: 10px;
+	font-weight: 400;
+	background: var(--dark);
+}
+.paymentContainer > h1 > a {
+	text-decoration: none !important;
+	color: var(--light);
+}
+.paymentSection {
+	display: flex;
+	padding: 20px;
+	margin: 0 20px;
+	border-bottom: 1px solid var(--icon-bg);
+}
+.paymentTitle {
+	flex: 0.4;
+}
+.paymentItems,
+.paymentAddress,
+.paymentDetails {
+	flex: 0.6;
+}
+
+.paymentButton {
+    background: var(--purple);
+	border-radius: 25px;
+    padding: 10px;
+	border: none;
+	margin-top: 10px;
+	color: var(--white);
+}

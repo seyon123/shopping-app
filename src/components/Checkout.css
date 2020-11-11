@@ -1,0 +1,19 @@
+.checkout {
+    display: flex;
+    align-self: center;
+    padding: 20px;
+    margin-top: auto;
+	background-color: var(--grey);
+	height: max-content;
+}
+
+.checkoutLeft {
+    margin-right: 10px;
+    flex: 1;
+}
+
+.checkoutTitle {
+	margin-right: 10px;
+	padding: 10px;
+	border-bottom: 1px solid var(--icon-bg);
+}
