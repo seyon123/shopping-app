@@ -1,0 +1,17 @@
+.order {
+    padding: 30px;
+    margin: 20px 0;
+    background: var(--grey);
+    position: relative;
+    border-radius: 5px;
+}
+
+.orderId {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.orderTotal {
+    text-align: right;
+}

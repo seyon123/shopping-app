@@ -30,10 +30,23 @@
 }
 
 .paymentButton {
-    background: var(--purple);
+    background: var(--gradient);
 	border-radius: 25px;
     padding: 10px;
 	border: none;
 	margin-top: 10px;
 	color: var(--white);
 }
+
+.paymentButton:hover {
+	cursor: pointer;
+    background: var(--purple);
+}
+
+.paymentButton:disabled {
+	cursor: not-allowed;
+	background: var(--purple);
+	opacity: 20%;
+
+}
+

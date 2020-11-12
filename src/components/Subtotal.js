@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 
 function Subtotal() {
 	const history = useHistory();
-	const [{ basket }, dispatch] = useStateValue();
+	const [{ user, basket }, dispatch] = useStateValue();
 
 	return (
 		<div className="subtotal">
@@ -32,11 +32,21 @@ function Subtotal() {
 
 			<button
 				onClick={(e) => {
-					dispatch({
-						type: "SET_DRAWER",
-						toggle: false,
-					});
-					history.push("/payment");
+					if (user || basket.length !== 0) {
+						dispatch({
+							type: "SET_DRAWER",
+							toggle: false,
+						});
+						history.push("/payment");
+					} else {
+						if (basket.length === 0) {
+							alert(
+								"Please add at least 1 item to make a purchase"
+							);
+						} else {
+							alert("You must sign-in to make a purchase");
+						}
+					}
 				}}
 			>
 				Proceed to checkout
