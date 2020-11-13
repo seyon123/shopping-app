@@ -32,10 +32,6 @@
     color: #f0c14b;
 }
 
-.checkoutProductRating > .non{
-    padding: 3px;
-    color: var(--head-light);
-}
 .checkoutProductTitle {
 	font-size: 17px;
 	font-weight: 800;

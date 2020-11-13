@@ -20,13 +20,29 @@
 	margin: 0 20px;
 	border-bottom: 1px solid var(--icon-bg);
 }
+
+.paymentInfo {
+	width: 250px;
+}
+
+.amount {
+	float: right;
+}
+
 .paymentTitle {
 	flex: 0.4;
 }
 .paymentItems,
 .paymentAddress,
-.paymentDetails {
+.paymentDetails,
+.paymentTotal {
 	flex: 0.6;
+}
+
+.disclaimer {
+	font-size: 10px;
+	opacity: 0.8;
+	margin-bottom: 20px;
 }
 
 .paymentButton {
@@ -34,7 +50,7 @@
 	border-radius: 25px;
     padding: 10px;
 	border: none;
-	margin-top: 10px;
+	margin-top: 20px;
 	color: var(--white);
 }
 

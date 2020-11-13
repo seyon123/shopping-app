@@ -14,8 +14,9 @@ function Checkout() {
 					<h3>Hello, {user ? `${user.email.split('@')[0]} (${user.email})`: "Guest"}</h3>
 					<h2 className="checkoutTitle">Your shopping Basket</h2>
 
-					{basket.map((item) => (
+					{basket.map((item, i) => (
 						<CheckoutProduct
+							key={i}
 							id={item.id}
 							title={item.title}
 							image={item.image}

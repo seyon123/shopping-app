@@ -46,7 +46,6 @@ function Payment() {
 				},
 			})
 			.then(({ paymentIntent }) => {
-
 				db.collection("users")
 					.doc(user?.uid)
 					.collection("orders")
@@ -95,7 +94,7 @@ function Payment() {
 				</div>
 				<div className="paymentSection">
 					<div className="paymentTitle">
-						<h3>Review items and delivery</h3>
+						<h3>Review items</h3>
 					</div>
 					<div className="paymentItems">
 						{basket.map((item, i) => (
@@ -113,21 +112,71 @@ function Payment() {
 
 				<div className="paymentSection">
 					<div className="paymentTitle">
-						<h3>Payment Methods</h3>
+						<h3>Order Total: </h3>
 					</div>
-					<div className="paymentDetails">
-						<form onSubmit={handleSubmit}>
-							<CardElement onChange={handleChange} />
-							<div className="paymentPriceContainer">
+					<div className="paymentTotal">
+						<div className="paymentInfo">
+							{getBasketTotal(basket) !== 0 ? 
+							<>
 								<CurrencyFormat
-									renderText={(value) => (
-										<h3>Order Total: {value}</h3>
-									)}
+									renderText={(value) => <><h4>Items: <span className="amount">{value}</span></h4><h4>Shipping: <span className="amount">$5.99</span> </h4><h4>FREE Shipping: <span className="amount">-$5.99</span> </h4></>}
 									decimalScale={2}
 									value={getBasketTotal(basket)}
 									displayType="text"
 									thousandSeperator={true}
 									prefix="$"
+								/>
+								<CurrencyFormat
+									renderText={(value) => <><br/><h4>Total Before Tax: <span className="amount">{value}</span></h4></>}
+									decimalScale={2}
+									value={getBasketTotal(basket)}
+									displayType="text"
+									thousandSeperator={true}
+									prefix="$"
+								/>
+								<CurrencyFormat
+									renderText={(value) => <><h4>Estimated Tax: <span className="amount">{value}</span></h4></>}
+									decimalScale={2}
+									value={getBasketTotal(basket)*0.13}
+									displayType="text"
+									thousandSeperator={true}
+									prefix="$"
+								/>
+							</> : ""}
+							<CurrencyFormat
+								renderText={(value) => <><br/><h3>Final Total: <span className="amount">{value}</span></h3></>}
+								decimalScale={2}
+								value={getBasketTotal(basket)*1.13}
+								displayType="text"
+								thousandSeperator={true}
+								prefix="$"
+							/>
+						</div>
+					</div>
+				</div>
+
+				<div className="paymentSection">
+					<div className="paymentTitle">
+						<h3>Payment Details</h3>
+					</div>
+					<div className="paymentDetails">
+						<form onSubmit={handleSubmit}>
+							<div className="paymentPriceContainer">
+								<p className="disclaimer">Use 4242 4242 4242 4242, a valid expiration date in the future, and any CVC number. Please dont use your real credit card info. This is not a real store!</p>
+								<CardElement
+									onChange={handleChange}
+									options={{
+										style: {
+											base: {
+												margin: "20px",
+												fontSize: "16px",
+												color: "#424770",
+											},
+											invalid: {
+												color: "#9e2146",
+											},
+										},
+									}}
 								/>
 								<button
 									disabled={

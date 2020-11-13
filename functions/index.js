@@ -17,7 +17,7 @@ const app = express();
 app.use(cors({ origin: true }));
 app.use(express.json());
 
-app.get("/", (reqest, response) => {
+app.get("/", (request, response) => {
 	response.send("Get");
 });
 
@@ -28,7 +28,7 @@ app.post("/payments/create", async (req, res) => {
 
 	const paymentIntent = await stripe.paymentIntents.create({
 		amount: total,
-		currency: "usd",
+		currency: "cad",
 	});
 
 	res.status(201).send({
@@ -37,4 +37,3 @@ app.post("/payments/create", async (req, res) => {
 });
 
 exports.api = functions.https.onRequest(app);
-// app.listen(5000);

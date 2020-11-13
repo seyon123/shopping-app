@@ -49,7 +49,7 @@ function Header() {
 			</div>
 
 			<div className="headerNavContainer">
-				<Link to={!user && "/login"} className="link">
+				<Link to={!user ? "/login" : ""} className="link">
 					<div onClick={handleAuthenticaton} className="headerOption">
 						<span className="headerOptionLineOne">
 							{user ? user.email.split('@')[0] : "Hello Guest"}

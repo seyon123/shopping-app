@@ -21,9 +21,6 @@
 	padding: 3px;
 	color: #f0c14b;
 }
-.productRating > .non {
-	color: var(--head-light);
-}
 
 .product > img {
 	max-height: 200px;
@@ -53,4 +50,6 @@
 .productInfo {
 	height: 100px;
 	margin-bottom: 15px;
+	text-align: left;
+	width: 100%;
 }
