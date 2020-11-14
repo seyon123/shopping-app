@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 import Product from "./Product";
 
 function Home() {
+
+	useEffect(() => {
+		document.title = `ReactShop`;
+	}, [])
+
 	return (
 		<div className="home">
 			<div className="homeContainer">
 				<img
 					className="homeImage"
-					src="https://assets1.csnews.com/files/styles/hero/s3/2018-07/Amazon%20Prime%20Day%202018_hero_072318.jpg?itok=Iw0QqmJQ"
+					src="https://images-na.ssl-images-amazon.com/images/G/15/kindle/journeys/MDUxZTAzODMt/MDUxZTAzODMt-MTlkMjQ1MmEt-w1500._CB418674021_.jpg"
 					alt=""
 				/>
 				<div className="homeRow">
@@ -20,11 +25,11 @@ function Home() {
 						image="https://images-na.ssl-images-amazon.com/images/I/71uLuTiXQlL._AC_SL1500_.jpg"
 					/>
 					<Product
-						id="49538094"
-						title="Xbox Series X"
-						price={1100.0}
-						rating={5}
-						image="https://images-na.ssl-images-amazon.com/images/I/51A41nLe5IL._AC_SL1200_.jpg"
+						id="31829332"
+						title="All-new Echo Dot (4th Gen) | Smart speaker with clock and Alexa | Glacier White"
+						price={79.99}
+						rating={4}
+						image="https://images-na.ssl-images-amazon.com/images/I/61nNGJH14kL._AC_SL1000_.jpg"
 					/>
 					<Product
 						id="49538094"
@@ -45,10 +50,10 @@ function Home() {
 					/>
 					<Product
 						id="23445930"
-						title="All-new Echo Dot (4th Gen) | Smart speaker with clock and Alexa | Glacier White"
-						price={79.99}
-						rating={4}
-						image="https://images-na.ssl-images-amazon.com/images/I/61nNGJH14kL._AC_SL1000_.jpg"
+						title="iRobot Roomba 981 Robot Vacuum- Wi-Fi Connected Mapping, Works with Alexa, Ideal for Pet Hair, Carpets, Hard Floors"
+						price={799.99}
+						rating={3}
+						image="https://images-na.ssl-images-amazon.com/images/I/91irRh%2BK7qL._AC_SL1500_.jpg"
 					/>
 					<Product
 						id="3254354345"
@@ -61,11 +66,11 @@ function Home() {
 
 				<div className="homeRow">
 					<Product
-						id="12321341"
-						title="HyperX Alloy Origins Core - Tenkeyless Mechanical Gaming Keyboard, Software Controlled Light & Macro Customization, Compact Form Factor, RGB LED Backlit, Linear HyperX Red Switch"
-						price={124.99}
-						rating={5}
-						image="https://images-na.ssl-images-amazon.com/images/I/61b%2B3QeNq-L._AC_SL1428_.jpg"
+						id="10826322"
+						title="Samsung LC32G55TQWNXZA WQHD 144HZ 1MS Freesync HDR10 Monitor with 1000R"
+						price={499.99}
+						rating={4}
+						image="https://images-na.ssl-images-amazon.com/images/I/61Lb5JbFxML._AC_SL1000_.jpg"
 					/>
 					<Product
 						id="12321341"

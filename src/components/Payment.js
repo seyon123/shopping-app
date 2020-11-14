@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Payment.css";
 import { useStateValue } from "../StateProvider";
 import { getBasketTotal } from "../reducer";
@@ -20,6 +20,10 @@ function Payment() {
 	const [error, setError] = useState(null);
 	const [disabled, setDisabled] = useState(true);
 	const [clientSecret, setClientSecret] = useState(true);
+
+	useEffect(() => {
+		document.title = `Checkout | ReactShop`;
+	}, [])
 
 	useState(() => {
 		const getClientSecret = async () => {

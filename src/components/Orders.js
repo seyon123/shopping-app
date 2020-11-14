@@ -9,6 +9,10 @@ function Orders() {
 	const [orders, setOrders] = useState([]);
 
 	useEffect(() => {
+		document.title = `Orders | ReactShop`;
+	}, [])
+
+	useEffect(() => {
 		if (user) {
 			db.collection("users")
 				.doc(user?.uid)

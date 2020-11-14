@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Login from "./components/Login";
@@ -19,7 +19,7 @@ import { useStateValue } from "./StateProvider";
 const promise = loadStripe('pk_test_51HmRU3Dl5dhSyKoHs3lTX5ZY3l7L1y6bixBlzjPfRBzOSuzkEJcLXVzpmiKTGDQk6ybCIhubIrG86M69I7v4UCHR00G0Aix5VU');
 
 function App() {
-	const [{ user }, dispatch] = useStateValue();
+	const [{ user, basket }, dispatch] = useStateValue();
 
 	useEffect(() => {
 		auth.onAuthStateChanged((authUser) => {
@@ -42,31 +42,34 @@ function App() {
 		<div className="App">
 			<Router>
 				<Switch>
-					<Route path="/login">
+					<Route exact path="/login">
 						<Login />
 					</Route>
-					<Route path="/orders">
+					<Route exact path="/orders">
 						<Header />
 						<Orders />
 						<Footer />
 					</Route>
-					<Route path="/checkout">
+					<Route exact path="/checkout">
 						<Header />
 						<Checkout />
 						<Footer />
 					</Route>
-					<Route path="/payment">
+					<Route exact path="/payment">
 						<Header />
-						<Elements stripe={promise}>
-							<Payment />
-						</Elements>
+						{basket?.length ?
+							<Elements stripe={promise}>
+								<Payment />
+							</Elements>
+						: <Redirect to="/"/>}
 						<Footer />
 					</Route>
-					<Route path="/">
+					<Route exact path="/">
 						<Header />
 						<Home />
 						<Footer />
 					</Route>
+					<Route><Redirect to="/"/></Route>
 				</Switch>
 			</Router>
 		</div>
