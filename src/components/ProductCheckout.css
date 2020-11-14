@@ -6,6 +6,7 @@
 
 .checkoutProductInfo {
 	padding-left: 20px;
+	max-width: 400px;
 }
 
 .checkoutProductInfo > button {
@@ -35,4 +36,27 @@
 .checkoutProductTitle {
 	font-size: 17px;
 	font-weight: 800;
+}
+
+
+@media screen and (max-width: 768px) {
+	.checkoutProduct {
+		flex-direction: column;
+	}
+
+	.checkoutProductInfo {
+		padding: 0px;
+		max-width: 400px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.checkoutProductRating{
+		margin: 0 auto;
+		width: fit-content;
+	}
+
+	.checkoutProductImage {
+		margin: 0 auto;
+	}
 }

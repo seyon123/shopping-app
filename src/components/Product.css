@@ -7,7 +7,6 @@
 	padding: 20px;
 	width: 100%;
 	max-height: 400px;
-	min-width: 100px;
 	border-radius: 5px;
 	background-color: var(--grey);
 	z-index: 1;
@@ -52,4 +51,11 @@
 	margin-bottom: 15px;
 	text-align: left;
 	width: 100%;
+}
+
+
+@media screen and (max-width: 768px) {
+	.product {
+		width: calc(100% - 60px);
+	}
 }

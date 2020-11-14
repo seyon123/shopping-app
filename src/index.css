@@ -52,3 +52,17 @@
 html {
 	scroll-behavior: smooth;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--grey)
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--purple);
+    border-radius: 5px;
+}

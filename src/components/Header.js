@@ -39,7 +39,7 @@ function Header() {
 
 	return (
 		<div className="header">
-			<Link className="link" to="/">
+			<Link className="link headerTitle" to="/">
 				<h1 className="headerLogo">ReactShop</h1>
 			</Link>
 
@@ -47,6 +47,7 @@ function Header() {
 				<input className="headerSearchInput" type="text" />
 				<i className="fas fa-search headerSearchIcon"></i>
 			</div>
+			<div className="break" ></div>
 
 			<div className="headerNavContainer">
 				<Link to={!user ? "/login" : ""} className="link">

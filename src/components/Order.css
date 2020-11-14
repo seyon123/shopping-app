@@ -8,10 +8,19 @@
 
 .orderId {
     position: absolute;
+    text-align: right;
     top: 30px;
     right: 30px;
 }
 
 .orderTotal {
     text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+	.orderId {
+        position: unset;
+        text-align: left;
+        font-size: 0.7em;
+    }
 }

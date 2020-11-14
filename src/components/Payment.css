@@ -21,12 +21,12 @@
 	border-bottom: 1px solid var(--icon-bg);
 }
 
-.paymentInfo {
-	width: 400px;
+.paymentInfo, .paymentPriceContainer {
+	max-width: 600px;
 }
 
 .paymentInfo > p {
-	margin: 10px;
+	margin: 10px 0;
 }
 
 .paymentInfo > p > input {
@@ -43,7 +43,7 @@
 	padding: 5px;
 }
 
-.amount {
+.amount, .text {
 	float: right;
 }
 
@@ -84,3 +84,34 @@
 
 }
 
+
+@media screen and (max-width: 768px) {
+	
+	.paymentSection {
+		flex-direction: column;
+		padding: 20px 0px;
+	}
+	.paymentTitle,
+	.paymentItems,
+	.paymentAddress,
+	.paymentDetails,
+	.paymentTotal {
+		flex: 1;
+		flex-basis: 100%;
+	}
+
+	.paymentInfo > p {
+		margin: 10px 0px;
+		width: 100%;
+	}
+
+	.text {
+		float: unset;
+		width: calc(100% - 10px);
+	}
+
+	.paymentInfo {
+		max-width: unset;
+	}
+	
+}

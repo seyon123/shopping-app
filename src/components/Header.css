@@ -4,8 +4,8 @@
 }
 
 .header {
-	height: 60px;
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	background: var(--grey);
 	position: sticky;
@@ -27,6 +27,7 @@
 .headerSearchInput {
 	height: 12px;
 	padding: 10px;
+	margin: 0 10px;
 	border: none;
     width: 100%;
     border-radius: 24px;
@@ -35,7 +36,7 @@
 }
 
 .headerSearchIcon {
-	padding: 5px 7px;
+	padding: 5px 8.5px;
     margin: 0 10px;
     line-height: 22px;
     display: block;
@@ -64,7 +65,6 @@
 
 .headerBasketCount {
 	margin-left: 10px;
-	margin-right: 10px;
 }
 
 .headerNavContainer {
@@ -93,9 +93,34 @@
 }
 
 .headerTheme i {
-	padding: 6px 5.8px;
+	padding: 7px 7px;
 }
 
 .headerSearchIcon:hover, .headerOption:hover, .headerOptionBasket:hover {
 	cursor: pointer;
 }
+
+
+@media screen and (max-width: 768px) {
+	.header {
+		position: unset;
+	}
+	
+	.headerNavContainer, .headerSearchContainer, .headerTitle {
+		width: 100vw;
+		flex-direction: row;
+		margin: 5px 0;
+	}
+
+	.break {
+		flex-basis: 100%;
+		height: 0;
+	}
+
+	.headerTheme {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+

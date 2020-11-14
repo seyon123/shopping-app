@@ -25,7 +25,7 @@ function Payment() {
 		const getClientSecret = async () => {
 			const response = await axios({
 				method: "post",
-				url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
+				url: `/payments/create?total=${getBasketTotal(basket) * 1.13 * 100}`,
 			});
 			setClientSecret(response.data.clientSecret);
 		};
@@ -120,7 +120,7 @@ function Payment() {
 							{getBasketTotal(basket) !== 0 ? 
 							<>
 								<CurrencyFormat
-									renderText={(value) => <><h4>Items: <span className="amount">{value}</span></h4><h4>Shipping: <span className="amount">$5.99</span> </h4><h4>FREE Shipping: <span className="amount">-$5.99</span> </h4></>}
+									renderText={(value) => <><p>Items: <span className="amount">{value}</span></p><p>Shipping: <span className="amount">$5.99</span> </p><p>FREE Shipping: <span className="amount">-$5.99</span> </p></>}
 									decimalScale={2}
 									value={getBasketTotal(basket)}
 									displayType="text"
@@ -128,7 +128,7 @@ function Payment() {
 									prefix="$"
 								/>
 								<CurrencyFormat
-									renderText={(value) => <><br/><h4>Total Before Tax: <span className="amount">{value}</span></h4></>}
+									renderText={(value) => <><br/><p>Total Before Tax: <span className="amount">{value}</span></p></>}
 									decimalScale={2}
 									value={getBasketTotal(basket)}
 									displayType="text"
@@ -136,7 +136,7 @@ function Payment() {
 									prefix="$"
 								/>
 								<CurrencyFormat
-									renderText={(value) => <><h4>Estimated Tax: <span className="amount">{value}</span></h4></>}
+									renderText={(value) => <><p>Estimated Tax: <span className="amount">{value}</span></p></>}
 									decimalScale={2}
 									value={getBasketTotal(basket)*0.13}
 									displayType="text"
@@ -158,17 +158,17 @@ function Payment() {
 				<form onSubmit={handleSubmit}>
 					<div className="paymentSection">
 						<div className="paymentTitle">
-							<h3>Delivery Address</h3>
+							<h3>Delivery/Billing Info</h3>
 						</div>
 						<div className="paymentAddress">
 							<div className="paymentInfo">
-								<p>Email: <input name="email" className="amount" type="email" defaultValue={user?.email} required></input></p>
-								<p>Name: <input name="name" className="amount" type="text" required/></p>
-								<p>City: <input name="city" className="amount" type="text" required/></p>
-								<p>Address: <input name="address" className="amount" type="text" required/></p>
-								<p>State/Province: <input name="province" className="amount" type="text" required/></p>
-								<p>Zip/Postal Code: <input name="postal_code" className="amount" type="text" required/></p>
-								<p>Country: <input name="country" className="amount" type="text" required/></p>
+								<p>Email: <input name="email" className="text" type="email" defaultValue={user?.email} required></input></p>
+								<p>Name: <input name="name" className="text" type="text" required/></p>
+								<p>City: <input name="city" className="text" type="text" required/></p>
+								<p>Address: <input name="address" className="text" type="text" required/></p>
+								<p>State/Province: <input name="province" className="text" type="text" required/></p>
+								<p>Zip/Postal Code: <input name="postal_code" className="text" type="text" required/></p>
+								<p>Country: <input name="country" className="text" type="text" required/></p>
 							</div>
 						</div>
 					</div>
