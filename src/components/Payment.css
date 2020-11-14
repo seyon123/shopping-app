@@ -22,7 +22,25 @@
 }
 
 .paymentInfo {
-	width: 250px;
+	width: 400px;
+}
+
+.paymentInfo > p {
+	margin: 10px;
+}
+
+.paymentInfo > p > input {
+	background: var(--dark);
+	border-radius: 5px;
+	padding: 5px;
+	border: none;
+	color: var(--head-light);
+}
+
+.cardInfo {
+	background: var(--dark);
+	border-radius: 5px;
+	padding: 5px;
 }
 
 .amount {

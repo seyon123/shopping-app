@@ -32,11 +32,10 @@ function Login() {
 
 	return (
 		<div className="login">
-			<Link to="/" className="link">
-				<h1 className="loginLogo">ReactShop</h1>
-			</Link>
-
 			<div className="loginContainer">
+				<Link to="/" className="link">
+					<h1 className="loginLogo">ReactShop</h1>
+				</Link>
 				<h1>Sign-in</h1>
 
 				<form>
@@ -63,14 +62,15 @@ function Login() {
 					</button>
 				</form>
 
-				<p>
-					This is a fake store called ReactShop. This was created for demo purposes only. Do not try to
-					purchase any products through this store.
-				</p>
-
 				<button className="loginRegisterButton" onClick={register}>
 					Create your ReactShop Account
 				</button>
+
+				<p>
+					Disclaimer: This is a fake store called ReactShop. This was created for demo purposes only. Do not try to
+					purchase any products through this store. If you want to try this app without giving your information use email: <b>demo@demo.com</b> and <b>Demo123</b> as password.
+				</p>
+
 			</div>
 		</div>
 	);

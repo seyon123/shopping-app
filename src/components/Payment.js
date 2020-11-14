@@ -39,6 +39,18 @@ function Payment() {
 		e.preventDefault();
 		setProcessing(true);
 
+		const billingDetails = {
+			name: e.target.name.value,
+			email: e.target.email.value,
+			address: {
+				address: e.target.address.value,
+				city: e.target.city.value,
+				province: e.target.province.value,
+				postal_code: e.target.postal_code.value,
+				country: e.target.country.value
+			}
+		};
+
 		const payload = await stripe
 			.confirmCardPayment(clientSecret, {
 				payment_method: {
@@ -54,6 +66,7 @@ function Payment() {
 						basket,
 						amount: paymentIntent.amount,
 						created: paymentIntent.created,
+						billing_details: billingDetails,
 					});
 
 				setSucceeded(true);
@@ -80,18 +93,6 @@ function Payment() {
 					Checkout (<Link to="/checkout">{basket?.length} items</Link>
 					)
 				</h1>
-				<div className="paymentSection">
-					<div className="paymentTitle">
-						<h3>Delivery Address</h3>
-					</div>
-					<div className="paymentAddress">
-						<p>{user?.email}</p>
-						<p>123 Some Address</p>
-						<p>City, State/Province</p>
-						<p>Zip/Postal Code</p>
-						<p>Country</p>
-					</div>
-				</div>
 				<div className="paymentSection">
 					<div className="paymentTitle">
 						<h3>Review items</h3>
@@ -154,16 +155,32 @@ function Payment() {
 						</div>
 					</div>
 				</div>
-
-				<div className="paymentSection">
-					<div className="paymentTitle">
-						<h3>Payment Details</h3>
+				<form onSubmit={handleSubmit}>
+					<div className="paymentSection">
+						<div className="paymentTitle">
+							<h3>Delivery Address</h3>
+						</div>
+						<div className="paymentAddress">
+							<div className="paymentInfo">
+								<p>Email: <input name="email" className="amount" type="email" defaultValue={user?.email} required></input></p>
+								<p>Name: <input name="name" className="amount" type="text" required/></p>
+								<p>City: <input name="city" className="amount" type="text" required/></p>
+								<p>Address: <input name="address" className="amount" type="text" required/></p>
+								<p>State/Province: <input name="province" className="amount" type="text" required/></p>
+								<p>Zip/Postal Code: <input name="postal_code" className="amount" type="text" required/></p>
+								<p>Country: <input name="country" className="amount" type="text" required/></p>
+							</div>
+						</div>
 					</div>
-					<div className="paymentDetails">
-						<form onSubmit={handleSubmit}>
+
+					<div className="paymentSection">
+						<div className="paymentTitle">
+							<h3>Payment Details</h3>
+						</div>
+						<div className="paymentDetails">
 							<div className="paymentPriceContainer">
 								<p className="disclaimer">Use 4242 4242 4242 4242, a valid expiration date in the future, and any CVC number. Please dont use your real credit card info. This is not a real store!</p>
-								<CardElement
+								<CardElement className="cardInfo"
 									onChange={handleChange}
 									options={{
 										style: {
@@ -194,9 +211,9 @@ function Payment() {
 								</button>
 							</div>
 							{error && <div>error</div>}
-						</form>
+						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	);
