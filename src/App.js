@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Login from "./components/Login";
 import Checkout from "./components/Checkout";
 import Payment from "./components/Payment";
+import ProductPage from "./components/ProductPage";
 import Footer from "./components/Footer";
 import Orders from "./components/Orders"
 import { auth } from "./firebase";
@@ -63,6 +64,11 @@ function App() {
 							</Elements>
 						: <Redirect to="/"/>}
 						<Footer />
+					</Route>
+					<Route exact path="/product/:productid">
+						<Header />
+						<ProductPage />
+						<Footer/>
 					</Route>
 					<Route exact path="/">
 						<Header />

@@ -1,0 +1,16 @@
+.singleProductContainerOuter{
+    min-height: calc(100vh - 113px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.singleProductContainer{
+    max-width: 500px;
+}
+
+@media screen and (max-width: 768px) {
+	.singleProductContainerOuter{
+        min-height: calc(100vh - 190px);
+    }
+}

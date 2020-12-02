@@ -1,6 +1,7 @@
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "../StateProvider";
+import { Link } from "react-router-dom";
 
 function Product({ id, title, image, price, rating }) {
 	const [{ basket }, dispatch] = useStateValue();
@@ -40,7 +41,7 @@ function Product({ id, title, image, price, rating }) {
 				</div>
 			</div>
 
-			<img src={image} alt="" />
+			<Link to={`/product/${id}`}><img src={image} alt={id} /></Link>
 
 			<button onClick={addToBasket}>
 				<i className="fas fa-shopping-basket"></i> Add to Basket
