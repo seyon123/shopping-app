@@ -2,7 +2,7 @@
 	background: var(--grey);
 }
 .paymentContainer {
-    padding: 20px 0;
+	padding: 20px 0;
 }
 .paymentContainer > h1 {
 	text-align: center;
@@ -21,7 +21,8 @@
 	border-bottom: 1px solid var(--icon-bg);
 }
 
-.paymentInfo, .paymentPriceContainer {
+.paymentInfo,
+.paymentPriceContainer {
 	max-width: 600px;
 }
 
@@ -43,7 +44,8 @@
 	padding: 5px;
 }
 
-.amount, .text {
+.amount,
+.text {
 	float: right;
 }
 
@@ -64,9 +66,9 @@
 }
 
 .paymentButton {
-    background: var(--gradient);
+	background: var(--gradient);
 	border-radius: 25px;
-    padding: 10px;
+	padding: 10px;
 	border: none;
 	margin-top: 20px;
 	color: var(--white);
@@ -74,19 +76,16 @@
 
 .paymentButton:hover {
 	cursor: pointer;
-    background: var(--purple);
+	background: var(--purple);
 }
 
 .paymentButton:disabled {
 	cursor: not-allowed;
 	background: var(--purple);
 	opacity: 20%;
-
 }
 
-
 @media screen and (max-width: 768px) {
-	
 	.paymentSection {
 		flex-direction: column;
 		padding: 20px 0px;
@@ -113,5 +112,4 @@
 	.paymentInfo {
 		max-width: unset;
 	}
-	
 }

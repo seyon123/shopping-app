@@ -6,18 +6,17 @@ import Checkout from "./components/Checkout";
 import Payment from "./components/Payment";
 import ProductPage from "./components/ProductPage";
 import Footer from "./components/Footer";
-import Orders from "./components/Orders"
+import Orders from "./components/Orders";
 import { auth } from "./firebase";
 
-import { loadStripe } from '@stripe/stripe-js'
-import { Elements } from '@stripe/react-stripe-js'
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 import "./App.css";
 import { useEffect } from "react";
 import { useStateValue } from "./StateProvider";
 
-
-const promise = loadStripe('pk_test_51HmRU3Dl5dhSyKoHs3lTX5ZY3l7L1y6bixBlzjPfRBzOSuzkEJcLXVzpmiKTGDQk6ybCIhubIrG86M69I7v4UCHR00G0Aix5VU');
+const promise = loadStripe("pk_test_51HmRU3Dl5dhSyKoHs3lTX5ZY3l7L1y6bixBlzjPfRBzOSuzkEJcLXVzpmiKTGDQk6ybCIhubIrG86M69I7v4UCHR00G0Aix5VU");
 
 function App() {
 	const [{ user, basket }, dispatch] = useStateValue();
@@ -58,24 +57,28 @@ function App() {
 					</Route>
 					<Route exact path="/payment">
 						<Header />
-						{basket?.length ?
+						{basket?.length ? (
 							<Elements stripe={promise}>
 								<Payment />
 							</Elements>
-						: <Redirect to="/"/>}
+						) : (
+							<Redirect to="/" />
+						)}
 						<Footer />
 					</Route>
 					<Route exact path="/product/:productid">
 						<Header />
 						<ProductPage />
-						<Footer/>
+						<Footer />
 					</Route>
 					<Route exact path="/">
 						<Header />
 						<Home />
 						<Footer />
 					</Route>
-					<Route><Redirect to="/"/></Route>
+					<Route>
+						<Redirect to="/" />
+					</Route>
 				</Switch>
 			</Router>
 		</div>

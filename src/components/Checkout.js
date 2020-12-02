@@ -9,24 +9,17 @@ function Checkout() {
 
 	useEffect(() => {
 		document.title = `Cart | ReactShop`;
-	}, [])
+	}, []);
 
 	return (
 		<div className="checkout">
 			<div className="checkoutLeft">
 				<div>
-					<h3>Hello, {user ? `${user.email.split('@')[0]} (${user.email})`: "Guest"}</h3>
+					<h3>Hello, {user ? `${user.email.split("@")[0]} (${user.email})` : "Guest"}</h3>
 					<h2 className="checkoutTitle">Your shopping Basket</h2>
 
 					{basket.map((item, i) => (
-						<ProductCheckout
-							key={i}
-							id={item.id}
-							title={item.title}
-							image={item.image}
-							price={item.price}
-							rating={item.rating}
-						/>
+						<ProductCheckout key={i} id={item.id} title={item.title} image={item.image} price={item.price} rating={item.rating} />
 					))}
 				</div>
 			</div>

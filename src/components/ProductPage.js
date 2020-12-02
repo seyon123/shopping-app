@@ -19,20 +19,15 @@ function ProductPage() {
 		}
 	}, [productid]);
 
-	return product &&(
-		<div className="singleProductContainerOuter">
-        <div className="singleProductContainer">
-            <Product
-                id={product?.id}
-                title={product?.title}
-                price={product?.price}
-                rating={product?.rating || 0}
-                image={product?.image}
-            />
-            {console.log(product)}
-        </div>
-        </div>
-		
+	return (
+		product && (
+			<div className="singleProductContainerOuter">
+				<div className="singleProductContainer">
+					<Product title={product?.title} price={product?.price} rating={product?.rating || 0} image={product?.image} />
+					{console.log(product)}
+				</div>
+			</div>
+		)
 	);
 }
 

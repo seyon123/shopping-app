@@ -1,19 +1,19 @@
 .checkout {
-    display: flex;
-    align-self: center;
-    padding: 20px;
-    margin-top: auto;
+	display: flex;
+	align-self: center;
+	padding: 20px;
+	margin-top: auto;
 	background-color: var(--grey);
 	height: max-content;
 }
 
 .checkoutLeft {
-    margin-right: 10px;
-    flex: 1;
+	margin-right: 10px;
+	flex: 1;
 }
 
 .checkoutLeft > div > h3 {
-    word-break: break-all;
+	word-break: break-all;
 }
 
 .checkoutTitle {
@@ -22,10 +22,9 @@
 	border-bottom: 1px solid var(--icon-bg);
 }
 
-
 @media screen and (max-width: 768px) {
 	.checkout {
-        flex-direction: column;
-        text-align: center;
+		flex-direction: column;
+		text-align: center;
 	}
 }

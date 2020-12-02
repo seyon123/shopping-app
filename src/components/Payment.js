@@ -23,7 +23,7 @@ function Payment() {
 
 	useEffect(() => {
 		document.title = `Checkout | ReactShop`;
-	}, [])
+	}, []);
 
 	useState(() => {
 		const getClientSecret = async () => {
@@ -51,8 +51,8 @@ function Payment() {
 				city: e.target.city.value,
 				province: e.target.province.value,
 				postal_code: e.target.postal_code.value,
-				country: e.target.country.value
-			}
+				country: e.target.country.value,
+			},
 		};
 
 		const payload = await stripe
@@ -62,16 +62,12 @@ function Payment() {
 				},
 			})
 			.then(({ paymentIntent }) => {
-				db.collection("users")
-					.doc(user?.uid)
-					.collection("orders")
-					.doc(paymentIntent.id)
-					.set({
-						basket,
-						amount: paymentIntent.amount,
-						created: paymentIntent.created,
-						billing_details: billingDetails,
-					});
+				db.collection("users").doc(user?.uid).collection("orders").doc(paymentIntent.id).set({
+					basket,
+					amount: paymentIntent.amount,
+					created: paymentIntent.created,
+					billing_details: billingDetails,
+				});
 
 				setSucceeded(true);
 				setError(null);
@@ -94,8 +90,7 @@ function Payment() {
 		<div className="payment">
 			<div className="paymentContainer">
 				<h1>
-					Checkout (<Link to="/checkout">{basket?.length} items</Link>
-					)
+					Checkout (<Link to="/checkout">{basket?.length} items</Link>)
 				</h1>
 				<div className="paymentSection">
 					<div className="paymentTitle">
@@ -103,14 +98,7 @@ function Payment() {
 					</div>
 					<div className="paymentItems">
 						{basket.map((item, i) => (
-							<ProductCheckout
-								key={i}
-								id={item.id}
-								title={item.title}
-								image={item.image}
-								price={item.price}
-								rating={item.rating}
-							/>
+							<ProductCheckout key={i} id={item.id} title={item.title} image={item.image} price={item.price} rating={item.rating} />
 						))}
 					</div>
 				</div>
@@ -121,37 +109,72 @@ function Payment() {
 					</div>
 					<div className="paymentTotal">
 						<div className="paymentInfo">
-							{getBasketTotal(basket) !== 0 ? 
-							<>
-								<CurrencyFormat
-									renderText={(value) => <><p>Items: <span className="amount">{value}</span></p><p>Shipping: <span className="amount">$5.99</span> </p><p>FREE Shipping: <span className="amount">-$5.99</span> </p></>}
-									decimalScale={2}
-									value={getBasketTotal(basket)}
-									displayType="text"
-									thousandSeperator={true}
-									prefix="$"
-								/>
-								<CurrencyFormat
-									renderText={(value) => <><br/><p>Total Before Tax: <span className="amount">{value}</span></p></>}
-									decimalScale={2}
-									value={getBasketTotal(basket)}
-									displayType="text"
-									thousandSeperator={true}
-									prefix="$"
-								/>
-								<CurrencyFormat
-									renderText={(value) => <><p>Estimated Tax: <span className="amount">{value}</span></p></>}
-									decimalScale={2}
-									value={getBasketTotal(basket)*0.13}
-									displayType="text"
-									thousandSeperator={true}
-									prefix="$"
-								/>
-							</> : ""}
+							{getBasketTotal(basket) !== 0 ? (
+								<>
+									<CurrencyFormat
+										renderText={(value) => (
+											<>
+												<p>
+													Items: <span className="amount">{value}</span>
+												</p>
+												<p>
+													Shipping: <span className="amount">$5.99</span>{" "}
+												</p>
+												<p>
+													FREE Shipping: <span className="amount">-$5.99</span>{" "}
+												</p>
+											</>
+										)}
+										decimalScale={2}
+										value={getBasketTotal(basket)}
+										displayType="text"
+										thousandSeperator={true}
+										prefix="$"
+									/>
+									<CurrencyFormat
+										renderText={(value) => (
+											<>
+												<br />
+												<p>
+													Total Before Tax: <span className="amount">{value}</span>
+												</p>
+											</>
+										)}
+										decimalScale={2}
+										value={getBasketTotal(basket)}
+										displayType="text"
+										thousandSeperator={true}
+										prefix="$"
+									/>
+									<CurrencyFormat
+										renderText={(value) => (
+											<>
+												<p>
+													Estimated Tax: <span className="amount">{value}</span>
+												</p>
+											</>
+										)}
+										decimalScale={2}
+										value={getBasketTotal(basket) * 0.13}
+										displayType="text"
+										thousandSeperator={true}
+										prefix="$"
+									/>
+								</>
+							) : (
+								""
+							)}
 							<CurrencyFormat
-								renderText={(value) => <><br/><h3>Final Total: <span className="amount">{value}</span></h3></>}
+								renderText={(value) => (
+									<>
+										<br />
+										<h3>
+											Final Total: <span className="amount">{value}</span>
+										</h3>
+									</>
+								)}
 								decimalScale={2}
-								value={getBasketTotal(basket)*1.13}
+								value={getBasketTotal(basket) * 1.13}
 								displayType="text"
 								thousandSeperator={true}
 								prefix="$"
@@ -166,13 +189,27 @@ function Payment() {
 						</div>
 						<div className="paymentAddress">
 							<div className="paymentInfo">
-								<p>Email: <input name="email" className="text" type="email" defaultValue={user?.email} required></input></p>
-								<p>Name: <input name="name" className="text" type="text" required/></p>
-								<p>City: <input name="city" className="text" type="text" required/></p>
-								<p>Address: <input name="address" className="text" type="text" required/></p>
-								<p>State/Province: <input name="province" className="text" type="text" required/></p>
-								<p>Zip/Postal Code: <input name="postal_code" className="text" type="text" required/></p>
-								<p>Country: <input name="country" className="text" type="text" required/></p>
+								<p>
+									Email: <input name="email" className="text" type="email" defaultValue={user?.email} required></input>
+								</p>
+								<p>
+									Name: <input name="name" className="text" type="text" required />
+								</p>
+								<p>
+									City: <input name="city" className="text" type="text" required />
+								</p>
+								<p>
+									Address: <input name="address" className="text" type="text" required />
+								</p>
+								<p>
+									State/Province: <input name="province" className="text" type="text" required />
+								</p>
+								<p>
+									Zip/Postal Code: <input name="postal_code" className="text" type="text" required />
+								</p>
+								<p>
+									Country: <input name="country" className="text" type="text" required />
+								</p>
 							</div>
 						</div>
 					</div>
@@ -183,8 +220,11 @@ function Payment() {
 						</div>
 						<div className="paymentDetails">
 							<div className="paymentPriceContainer">
-								<p className="disclaimer">Use 4242 4242 4242 4242, a valid expiration date in the future, and any CVC number. Please dont use your real credit card info. This is not a real store!</p>
-								<CardElement className="cardInfo"
+								<p className="disclaimer">
+									Use 4242 4242 4242 4242, a valid expiration date in the future, and any CVC number. Please dont use your real credit card info. This is not a real store!
+								</p>
+								<CardElement
+									className="cardInfo"
 									onChange={handleChange}
 									options={{
 										style: {
@@ -199,19 +239,8 @@ function Payment() {
 										},
 									}}
 								/>
-								<button
-									disabled={
-										processing || disabled || succeeded
-									}
-									className="paymentButton"
-								>
-									<span>
-										{processing ? (
-											<p>Processing</p>
-										) : (
-											"Buy Now"
-										)}
-									</span>
+								<button disabled={processing || disabled || succeeded} className="paymentButton">
+									<span>{processing ? <p>Processing</p> : "Buy Now"}</span>
 								</button>
 							</div>
 							{error && <div>error</div>}

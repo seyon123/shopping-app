@@ -10,9 +10,9 @@
 }
 
 .checkoutProductInfo > button {
-    background: var(--gradient);
-    padding: 10px;
-    border-radius: 25px;
+	background: var(--gradient);
+	padding: 10px;
+	border-radius: 25px;
 	border: none;
 	margin-top: 10px;
 	color: var(--white);
@@ -25,19 +25,18 @@
 }
 
 .checkoutProductRating {
-    display: flex;
+	display: flex;
 }
 
-.checkoutProductRating > i{
-    padding: 3px;
-    color: #f0c14b;
+.checkoutProductRating > i {
+	padding: 3px;
+	color: #f0c14b;
 }
 
 .checkoutProductTitle {
 	font-size: 17px;
 	font-weight: 800;
 }
-
 
 @media screen and (max-width: 768px) {
 	.checkoutProduct {
@@ -51,7 +50,7 @@
 		text-align: center;
 	}
 
-	.checkoutProductRating{
+	.checkoutProductRating {
 		margin: 0 auto;
 		width: fit-content;
 	}

@@ -41,7 +41,7 @@ function Product({ id, title, image, price, rating }) {
 				</div>
 			</div>
 
-			<Link to={`/product/${id}`}><img src={image} alt={id} /></Link>
+			{id ? <Link to={`/product/${id}`}><img src={image} alt={id} /></Link> : <img src={image} alt={""} />}
 
 			<button onClick={addToBasket}>
 				<i className="fas fa-shopping-basket"></i> Add to Basket

@@ -10,7 +10,7 @@ function Login() {
 
 	useEffect(() => {
 		document.title = `Login | ReactShop`;
-	}, [])
+	}, []);
 
 	const signIn = (e) => {
 		e.preventDefault();
@@ -44,24 +44,12 @@ function Login() {
 
 				<form>
 					<h5>E-mail</h5>
-					<input
-						type="text"
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-					/>
+					<input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
 
 					<h5>Password</h5>
-					<input
-						type="password"
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-					/>
+					<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-					<button
-						type="submit"
-						onClick={signIn}
-						className="loginSignInButton"
-					>
+					<button type="submit" onClick={signIn} className="loginSignInButton">
 						Sign In
 					</button>
 				</form>
@@ -71,10 +59,9 @@ function Login() {
 				</button>
 
 				<p>
-					Disclaimer: This is a fake store called ReactShop. This was created for demo purposes only. Do not try to
-					purchase any products through this store. If you want to try this app without giving your information use email: <b>demo@demo.com</b> and <b>Demo123</b> as password.
+					Disclaimer: This is a fake store called ReactShop. This was created for demo purposes only. Do not try to purchase any products through this store. If you want to try this app
+					without giving your information use email: <b>demo@demo.com</b> and <b>Demo123</b> as password.
 				</p>
-
 			</div>
 		</div>
 	);

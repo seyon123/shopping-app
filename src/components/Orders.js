@@ -10,7 +10,7 @@ function Orders() {
 
 	useEffect(() => {
 		document.title = `Orders | ReactShop`;
-	}, [])
+	}, []);
 
 	useEffect(() => {
 		if (user) {

@@ -47,17 +47,13 @@ function Header() {
 				<input className="headerSearchInput" type="text" />
 				<i className="fas fa-search headerSearchIcon"></i>
 			</div>
-			<div className="break" ></div>
+			<div className="break"></div>
 
 			<div className="headerNavContainer">
 				<Link to={!user ? "/login" : ""} className="link">
 					<div onClick={handleAuthenticaton} className="headerOption">
-						<span className="headerOptionLineOne">
-							{user ? user.email.split('@')[0] : "Hello Guest"}
-						</span>
-						<span className="headerOptionLineTwo">
-							{user ? "Sign Out" : "Sign In"}
-						</span>
+						<span className="headerOptionLineOne">{user ? user.email.split("@")[0] : "Hello Guest"}</span>
+						<span className="headerOptionLineTwo">{user ? "Sign Out" : "Sign In"}</span>
 					</div>
 				</Link>
 
@@ -71,9 +67,7 @@ function Header() {
 				<Link to="/checkout" className="link">
 					<div className="headerOptionBasket">
 						<i className="fas fa-shopping-basket"></i>
-						<span className="headerOptionLineTwo headerBasketCount">
-							{basket?.length}
-						</span>
+						<span className="headerOptionLineTwo headerBasketCount">{basket?.length}</span>
 					</div>
 				</Link>
 			</div>

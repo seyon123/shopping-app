@@ -1,4 +1,4 @@
-.link{
+.link {
 	text-decoration: none;
 	color: var(--light);
 }
@@ -29,22 +29,22 @@
 	padding: 10px;
 	margin: 0 10px;
 	border: none;
-    width: 100%;
-    border-radius: 24px;
-    background: var(--dark);
-    color: var(--head-light);
+	width: 100%;
+	border-radius: 24px;
+	background: var(--dark);
+	color: var(--head-light);
 }
 
 .headerSearchIcon {
 	padding: 5px 8.5px;
-    margin: 0 10px;
-    line-height: 22px;
-    display: block;
-    text-align: center;
-    color: var(--white);
-    background: var(--gradient);
-    border-radius: 24px;
-    width: 22px;
+	margin: 0 10px;
+	line-height: 22px;
+	display: block;
+	text-align: center;
+	color: var(--white);
+	background: var(--gradient);
+	border-radius: 24px;
+	width: 22px;
 }
 
 .headerOptionLineOne {
@@ -88,25 +88,28 @@
 	border-radius: 50%;
 	font-size: 1.2em;
 	font-weight: 900;
-    transition: 200ms ease-in-out;
-    z-index: 10;
+	transition: 200ms ease-in-out;
+	z-index: 10;
 }
 
 .headerTheme i {
 	padding: 7px 7px;
 }
 
-.headerSearchIcon:hover, .headerOption:hover, .headerOptionBasket:hover {
+.headerSearchIcon:hover,
+.headerOption:hover,
+.headerOptionBasket:hover {
 	cursor: pointer;
 }
-
 
 @media screen and (max-width: 768px) {
 	.header {
 		position: unset;
 	}
-	
-	.headerNavContainer, .headerSearchContainer, .headerTitle {
+
+	.headerNavContainer,
+	.headerSearchContainer,
+	.headerTitle {
 		width: 100vw;
 		flex-direction: row;
 		margin: 5px 0;
@@ -123,4 +126,3 @@
 		right: 0;
 	}
 }
-

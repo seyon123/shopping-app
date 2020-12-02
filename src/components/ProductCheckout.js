@@ -28,7 +28,7 @@ function ProductCheckout({ id, image, title, price, rating, hideButton }) {
 						.map((_, i) => (
 							<i key={i} className="fas fa-star"></i>
 						))}
-                    {Array(5-rating)
+					{Array(5 - rating)
 						.fill()
 						.map((_, i) => (
 							<i key={i} className="far fa-star"></i>

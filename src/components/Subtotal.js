@@ -16,8 +16,7 @@ function Subtotal() {
 				renderText={(value) => (
 					<>
 						<p>
-							Subtotal ({basket.length} items):{" "}
-							<strong>{value}</strong>
+							Subtotal ({basket.length} items): <strong>{value}</strong>
 						</p>
 						<small className="subtotalGift">
 							<input type="checkbox" /> This order contains a gift
@@ -25,7 +24,7 @@ function Subtotal() {
 					</>
 				)}
 				decimalScale={2}
-				value={getBasketTotal(basket)*1.13}
+				value={getBasketTotal(basket) * 1.13}
 				displayType={"text"}
 				thousandSeparator={true}
 				prefix={"$"}
@@ -43,9 +42,7 @@ function Subtotal() {
 						if (!user) {
 							alert("You must sign-in to make a purchase");
 						} else if (basket.length === 0) {
-							alert(
-								"Please add at least 1 item to make a purchase"
-							);
+							alert("Please add at least 1 item to make a purchase");
 						}
 					}
 				}}
