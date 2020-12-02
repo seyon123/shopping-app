@@ -1,0 +1,37 @@
+[debug] [2020-12-02T20:39:08.963Z] ----------------------------------------------------------------------
+[debug] [2020-12-02T20:39:08.964Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\r_sey\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2020-12-02T20:39:08.964Z] CLI Version:   8.16.0
+[debug] [2020-12-02T20:39:08.964Z] Platform:      win32
+[debug] [2020-12-02T20:39:08.964Z] Node Version:  v12.18.4
+[debug] [2020-12-02T20:39:08.965Z] Time:          Wed Dec 02 2020 15:39:08 GMT-0500 (Eastern Standard Time)
+[debug] [2020-12-02T20:39:08.965Z] ----------------------------------------------------------------------
+[debug] [2020-12-02T20:39:08.965Z] 
+[debug] [2020-12-02T20:39:08.971Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-02T20:39:08.971Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[debug] [2020-12-02T20:39:11.017Z] [hub] writing locator at C:\Users\r_sey\AppData\Local\Temp\hub-reactshoppy.json
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub\u001b[22m"}}
+[info] +  functions: Using node@12 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@12 from host."}}
+[debug] [2020-12-02T20:39:13.068Z] defaultcredentials: writing to file C:\Users\r_sey\AppData\Roaming\firebase\seyonrajagopal_gmail_com_application_default_credentials.json
+[debug] [2020-12-02T20:39:13.070Z] Setting GAC to C:\Users\r_sey\AppData\Roaming\firebase\seyonrajagopal_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\r_sey\\AppData\\Roaming\\firebase\\seyonrajagopal_gmail_com_application_default_credentials.json"}}
+[debug] [2020-12-02T20:39:15.107Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-12-02T20:39:15.107Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-12-02T20:39:15.265Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Wed, 02 Dec 2020 20:39:16 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-02T20:39:15.269Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/reactshoppy/webApps/-/config  
+ 
+[debug] [2020-12-02T20:39:15.692Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 02 Dec 2020 20:39:17 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2020-12-02T20:39:19.782Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2020-12-02T20:39:19.782Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2020-12-02T20:39:19.782Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\r_sey\\.cache\\firebase\\emulators\\ui-v1.2.2\\server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\r_sey\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.2.2\\\\server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2020-12-02T20:39:19.873Z] Web / API server started at http://localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at http://localhost:4000\n"}}
+[info] i  functions: Watching "C:\Users\r_sey\Documents\GitHub\shopping-app\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\r_sey\\Documents\\GitHub\\shopping-app\\functions\" for Cloud Functions..."}}
+[debug] [2020-12-02T20:39:20.316Z] [worker-pool] addWorker(~diagnostic~) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(~diagnostic~)"}}
+[debug] [2020-12-02T20:39:20.317Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key ~diagnostic~, total=1"}}
+[debug] [2020-12-02T20:39:20.317Z] [worker-pool] submitWork(triggerId=) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=)"}}
+[debug] [2020-12-02T20:39:20.317Z] [worker-~diagnostic~-2eed8656-c4d6-4953-9910-9767d8c1b868]: Assigning socketPath: \\?\pipe\C:\Users\r_sey\Documents\GitHub\shopping-app\functions\20300 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-~diagnostic~-2eed8656-c4d6-4953-9910-9767d8c1b868]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\r_sey\\Documents\\GitHub\\shopping-app\\functions\\20300"}}
+[debug] [2020-12-02T20:39:20.317Z] [worker-~diagnostic~-2eed8656-c4d6-4953-9910-9767d8c1b868]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-~diagnostic~-2eed8656-c4d6-4953-9910-9767d8c1b868]: BUSY"}}
