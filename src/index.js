@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reducer, { initialState } from "./reducer";
 import { StateProvider } from "./StateProvider";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -13,3 +14,5 @@ ReactDOM.render(
 	</React.StrictMode>,
 	document.getElementById("root")
 );
+
+serviceWorkerRegistration.register();
