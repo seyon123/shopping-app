@@ -15,4 +15,17 @@ ReactDOM.render(
 	document.getElementById("root")
 );
 
-serviceWorkerRegistration.register();
+serviceWorkerRegistration.register({
+	onUpdate: registration => {
+	  const waitingServiceWorker = registration.waiting;
+	  if (waitingServiceWorker) {
+		waitingServiceWorker.addEventListener("statechange", event => {
+		  if (event.target.state === "activated") {
+        alert("New Verison Found. Refressing...");
+        window.location.reload()
+		  }
+		})
+		waitingServiceWorker.postMessage({ type: "SKIP_WAITING" })
+	  }
+	}
+})
